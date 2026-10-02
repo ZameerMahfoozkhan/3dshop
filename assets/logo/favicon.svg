@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#18181B"/>
+  <!-- Layered Isometric Mark -->
+  <g transform="translate(8, 8)">
+    <!-- Top Face -->
+    <path d="M24 4 L44 15.5 L24 27 L4 15.5 Z" fill="#E8590C"/>
+    <!-- Left Face Layer 1 -->
+    <path d="M4 18 L24 29.5 L24 35 L4 23.5 Z" fill="#FAFAFA"/>
+    <!-- Left Face Layer 2 -->
+    <path d="M4 26 L24 37.5 L24 43 L4 31.5 Z" fill="#D4D4D8"/>
+    <!-- Right Face Layer 1 -->
+    <path d="M24 29.5 L44 18 L44 23.5 L24 35 Z" fill="#A1A1AA"/>
+    <!-- Right Face Layer 2 -->
+    <path d="M24 37.5 L44 26 L44 31.5 L24 43 Z" fill="#71717A"/>
+  </g>
+</svg>
