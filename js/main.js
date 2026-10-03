@@ -176,13 +176,18 @@ function createProductCardHTML(p) {
     `<span class="swatch-dot" style="background-color: ${c.hex};" title="${c.name}"></span>`
   ).join("");
 
+  const isGift = p.category === "Gifts" || p.isPersonalizable;
+  const badgeHTML = p.badge 
+    ? `<span class="product-badge-tag ${isGift ? "product-badge-personalize" : ""}">${isGift ? "✨ " + p.badge : p.badge}</span>` 
+    : (isGift ? `<span class="product-badge-tag product-badge-personalize">✨ Personalizable</span>` : "");
+
   return `
     <article class="product-card reveal-on-scroll" data-category="${p.category}" data-id="${p.id}">
       <div class="product-card-image-wrap">
         <a href="product.html?id=${p.id}" aria-label="View ${p.name}">
           <img src="${p.image}" alt="${p.name} - 3D Printed Product by 3D Shop" class="product-card-image" loading="lazy" width="400" height="400">
         </a>
-        ${p.badge ? `<span class="product-badge-tag">${p.badge}</span>` : ""}
+        ${badgeHTML}
       </div>
       <div class="product-card-body">
         <div class="product-meta-row">
@@ -207,10 +212,16 @@ function createProductCardHTML(p) {
             <a href="product.html?id=${p.id}" class="btn btn-sm btn-secondary" title="View Specifications">
               Details
             </a>
-            <button type="button" class="btn btn-sm btn-whatsapp quick-whatsapp-btn" data-product-id="${p.id}" title="Order on WhatsApp">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/></svg>
-              <span>Order</span>
-            </button>
+            ${isGift ? `
+              <a href="product.html?id=${p.id}#personalize" class="btn btn-sm btn-whatsapp" title="Personalize this gift">
+                <span>Personalize</span>
+              </a>
+            ` : `
+              <button type="button" class="btn btn-sm btn-whatsapp quick-whatsapp-btn" data-product-id="${p.id}" title="Order on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/></svg>
+                <span>Order</span>
+              </button>
+            `}
           </div>
         </div>
       </div>
@@ -227,6 +238,11 @@ document.addEventListener("click", (e) => {
   const id = quickBtn.getAttribute("data-product-id");
   const product = window.getProductById ? window.getProductById(id) : null;
   if (!product) return;
+
+  if (product.category === "Gifts" || product.isPersonalizable) {
+    window.location.href = `product.html?id=${product.id}#personalize`;
+    return;
+  }
 
   const defaultColor = product.colors && product.colors[0] ? product.colors[0].name : "Standard";
   const msg = formatProductOrderMessage({

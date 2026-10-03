@@ -38,7 +38,7 @@
     "name": "3D Shop",
     "image": "https://3dshop.in/assets/images/hero-studio-prints.jpg",
     "description": "3D printing studio and product store in Greater Noida, providing ready-made 3D printed products, custom 3D design, and rapid prototyping across India.",
-    "telephone": "+919871234567",
+    "telephone": "+917307256084",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Greater Noida",
@@ -242,113 +242,199 @@
       </div>
     </div>
 
-    <!-- Three Service Paths Section -->
-    <section class="section section-subtle">
+    <!-- Shop By Category Section -->
+    <section class="section section-subtle" id="categories-section">
       <div class="container">
-        <div class="section-header center">
-          <div class="eyebrow eyebrow-neutral">How To Work With Us</div>
-          <h2 class="section-title">Choose How You Want To Print</h2>
-          <p class="section-description">
-            Whether you want a finished everyday essential, a custom design built from your idea, or rapid production of your existing 3D file.
-          </p>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+          <div>
+            <div class="eyebrow eyebrow-neutral">Curated Collections</div>
+            <h2 class="section-title">Explore By Category</h2>
+            <p class="section-description">
+              Browse precision-crafted 3D prints across desk setups, organization, home accents, gaming gear, and personalized gifts.
+            </p>
+          </div>
+          <a href="shop.html" class="btn btn-secondary">
+            <span>View Full Catalog</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
 
-        <div class="paths-grid">
-          <!-- Card 1: Shop Ready-Made -->
-          <div class="path-card-premium reveal-on-scroll">
-            <div class="path-card-media">
-              <img src="assets/products/desk-organizer.jpg" alt="Curated 3D printed modular desk organizer" class="path-card-img" width="600" height="380" loading="lazy">
-              <div class="path-card-badge-floating">
-                <span class="path-badge-dot"></span>
-                <span>Ready To Ship</span>
+        <div class="categories-grid">
+          <!-- Category 1: Desk Accessories -->
+          <a href="shop.html?category=Desk" class="category-card reveal-on-scroll" aria-label="Explore Desk Accessories">
+            <div class="category-card-media">
+              <img src="assets/products/headphone-stand.jpg" alt="3D printed desk accessories and headphone stands" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>2 Items</span>
               </div>
             </div>
-            <div class="path-card-body">
-              <div class="path-meta-row">
-                <span class="path-badge">OPTION 01</span>
-                <span class="path-micro-spec">12+ Catalog Items</span>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Workstation</span>
               </div>
-              <h3 class="path-card-title">Shop Ready-Made Products</h3>
-              <p class="path-card-desc">
-                Browse our curated collection of everyday desk organizers, cable accessories, geometric home decor, and personalized gifts. Selected and batch-tested for daily utility.
-              </p>
-              <div class="path-card-tags">
-                <span class="path-tag">In-Stock Catalog</span>
-                <span class="path-tag">Same-Day NCR Pickup</span>
-                <span class="path-tag">Direct WhatsApp Order</span>
-              </div>
-              <div class="path-card-action">
-                <a href="shop.html" class="btn btn-secondary path-btn">
-                  <span>Browse Catalog</span>
-                  <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-                </a>
+              <h3 class="category-card-title">Desk Accessories</h3>
+              <p class="category-card-desc">Angled smartphone docks, sculptural headphone stands &amp; ergonomic desktop mounts.</p>
+              <div class="category-card-cta">
+                <span>Explore Desk</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <!-- Card 2: Custom Design + Print -->
-          <div class="path-card-premium reveal-on-scroll">
-            <div class="path-card-media">
-              <img src="assets/products/mechanical-gear.jpg" alt="Custom precision engineered 3D printed mechanical assembly" class="path-card-img" width="600" height="380" loading="lazy">
-              <div class="path-card-badge-floating">
-                <span class="path-badge-dot path-dot-orange"></span>
-                <span>Concept &rarr; CAD Model</span>
+          <!-- Category 2: Modular Organization -->
+          <a href="shop.html?category=Organization" class="category-card reveal-on-scroll" aria-label="Explore Modular Organization">
+            <div class="category-card-media">
+              <img src="assets/products/desk-organizer.jpg" alt="Modular desk organizer and Gridfinity trays" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>2 Items</span>
               </div>
             </div>
-            <div class="path-card-body">
-              <div class="path-meta-row">
-                <span class="path-badge">OPTION 02</span>
-                <span class="path-micro-spec">No CAD Skills Needed</span>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Storage &amp; EDC</span>
               </div>
-              <h3 class="path-card-title">Have An Idea?</h3>
-              <p class="path-card-desc">
-                Send us your sketch, rough drawing, reference photo, or idea. We transform your concept into production-ready 3D CAD geometry, refine tolerances, and manufacture the final object.
-              </p>
-              <div class="path-card-tags">
-                <span class="path-tag">Custom CAD Design</span>
-                <span class="path-tag">Functional Prototypes</span>
-                <span class="path-tag">Iterative Proofing</span>
-              </div>
-              <div class="path-card-action">
-                <a href="custom-3d-printing.html" class="btn btn-primary path-btn">
-                  <span>Start Custom Order</span>
-                  <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-                </a>
+              <h3 class="category-card-title">Modular Organization</h3>
+              <p class="category-card-desc">Stepped honeycomb pencil cups, magnetic organizers &amp; Gridfinity snap-fit storage bins.</p>
+              <div class="category-card-cta">
+                <span>Explore Organizers</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <!-- Card 3: Print My 3D File -->
-          <div class="path-card-premium reveal-on-scroll">
-            <div class="path-card-media">
-              <img src="assets/products/geometric-sculpture.jpg" alt="Complex low-poly geometric 3D printed sculpture" class="path-card-img" width="600" height="380" loading="lazy">
-              <div class="path-card-badge-floating">
-                <span class="path-badge-dot path-dot-green"></span>
-                <span>Direct 3D Slicing</span>
+          <!-- Category 3: Home & Living -->
+          <a href="shop.html?category=Home" class="category-card reveal-on-scroll" aria-label="Explore Home and Living">
+            <div class="category-card-media">
+              <img src="assets/products/geometric-planter.jpg" alt="Parametric spiral 3D printed planter" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>1 Item</span>
               </div>
             </div>
-            <div class="path-card-body">
-              <div class="path-meta-row">
-                <span class="path-badge">OPTION 03</span>
-                <span class="path-micro-spec">Fast Slicing &amp; Quote</span>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Living &amp; Plants</span>
               </div>
-              <h3 class="path-card-title">Already Have A 3D File?</h3>
-              <p class="path-card-desc">
-                Send us your STL, 3MF, OBJ, or STEP file. Our technicians inspect wall thickness, overhang angles, and recommend optimal infill and orientation for maximum strength and economy.
-              </p>
-              <div class="path-card-tags">
-                <span class="path-tag">STL &middot; 3MF &middot; STEP &middot; OBJ</span>
-                <span class="path-tag">Wall &amp; Infill Review</span>
-                <span class="path-tag">Instant WhatsApp Quote</span>
-              </div>
-              <div class="path-card-action">
-                <a href="print-my-file.html" class="btn btn-secondary path-btn">
-                  <span>Print My File</span>
-                  <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-                </a>
+              <h3 class="category-card-title">Home &amp; Living</h3>
+              <p class="category-card-desc">Generative twisted-rib planters with watertight walls and root aeration drainage trays.</p>
+              <div class="category-card-cta">
+                <span>Explore Home</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
               </div>
             </div>
-          </div>
+          </a>
+
+          <!-- Category 4: Wall Art & Decor -->
+          <a href="shop.html?category=Decor" class="category-card reveal-on-scroll" aria-label="Explore Wall Art and Decor">
+            <div class="category-card-media">
+              <img src="assets/products/geometric-sculpture.jpg" alt="Low poly geometric panther sculpture" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>2 Items</span>
+              </div>
+            </div>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Sculptural Art</span>
+              </div>
+              <h3 class="category-card-title">Wall Art &amp; Decor</h3>
+              <p class="category-card-desc">Lustrous silk metallic low-poly panther statues &amp; faceted architectural wall hooks.</p>
+              <div class="category-card-cta">
+                <span>Explore Decor</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Category 5: Gaming Battlestation -->
+          <a href="shop.html?category=Gaming" class="category-card reveal-on-scroll" aria-label="Explore Gaming Accessories">
+            <div class="category-card-media">
+              <img src="assets/products/controller-dock.jpg" alt="Ergonomic gaming controller cradle" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>1 Item</span>
+              </div>
+            </div>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Battlestation</span>
+              </div>
+              <h3 class="category-card-title">Gaming Setup</h3>
+              <p class="category-card-desc">Rock-solid contoured controller cradles for PS5 DualSense, Xbox &amp; Switch Pro controllers.</p>
+              <div class="category-card-cta">
+                <span>Explore Gaming</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Category 6: Everyday Utility -->
+          <a href="shop.html?category=Utility" class="category-card reveal-on-scroll" aria-label="Explore Everyday Utility">
+            <div class="category-card-media">
+              <img src="assets/products/cable-organizer.jpg" alt="Weighted desktop cable organizer dock" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>2 Items</span>
+              </div>
+            </div>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Engineering</span>
+              </div>
+              <h3 class="category-card-title">Everyday Utility</h3>
+              <p class="category-card-desc">Weighted 5-slot cord anchors with nano-suction feet &amp; working planetary gear prototypes.</p>
+              <div class="category-card-cta">
+                <span>Explore Utility</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Category 7: Personalized Gifts -->
+          <a href="shop.html?category=Gifts" class="category-card reveal-on-scroll" aria-label="Explore Personalized Gifts">
+            <div class="category-card-media">
+              <img src="assets/products/name-plate.jpg" alt="Custom 3D printed desk nameplate" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot"></span>
+                <span>2 Items</span>
+              </div>
+            </div>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Bespoke &amp; Gifts</span>
+              </div>
+              <h3 class="category-card-title">Personalized Gifts</h3>
+              <p class="category-card-desc">Two-tone tactile raised letter nameplates &amp; indestructible geometric EDC pocket key fobs.</p>
+              <div class="category-card-cta">
+                <span>Explore Gifts</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Category 8: Custom 3D Printing -->
+          <a href="custom-3d-printing.html" class="category-card reveal-on-scroll" aria-label="Start Custom 3D Order">
+            <div class="category-card-media">
+              <img src="assets/products/mechanical-gear.jpg" alt="Custom precision engineered 3D print" class="category-card-img" width="500" height="340" loading="lazy">
+              <div class="category-card-badge">
+                <span class="category-card-badge-dot" style="background: #38BDF8;"></span>
+                <span>On-Demand</span>
+              </div>
+            </div>
+            <div class="category-card-body">
+              <div class="category-card-meta">
+                <span class="category-card-eyebrow">Custom Manufacturing</span>
+              </div>
+              <h3 class="category-card-title">Custom 3D Printing</h3>
+              <p class="category-card-desc">Have a sketch, photo or STL file? We provide custom CAD modeling, slicing &amp; rapid production.</p>
+              <div class="category-card-cta">
+                <span>Start Custom Order</span>
+                <span class="category-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -738,7 +824,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/>
               </svg>
-              <span>WhatsApp: +91 98712 34567</span>
+              <span>WhatsApp: +91 73072 56084</span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex-shrink: 0;">

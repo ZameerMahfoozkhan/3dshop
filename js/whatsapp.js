@@ -5,8 +5,8 @@
 
 const WHATSAPP_CONFIG = {
   // Centralized WhatsApp Number (Country code + 10 digits without '+' or spaces)
-  rawNumber: "919871234567",
-  formattedNumber: "+91 98712 34567",
+  rawNumber: "917307256084",
+  formattedNumber: "+91 73072 56084",
   email: "orders@3dshop.in",
   location: "Greater Noida, Uttar Pradesh, India",
   serviceNote: "Greater Noida & NCR local priority | Pan-India delivery"
@@ -36,15 +36,21 @@ function openWhatsApp(text) {
  * @param {Object} details
  * @returns {string}
  */
-function formatProductOrderMessage({ id, name, price, quantity, color, location, notes }) {
+function formatProductOrderMessage({ id, name, price, quantity, color, location, notes, personalization }) {
   let msg = `Hi 3D Shop team, I would like to order from your ready-made catalog:\n\n`;
   msg += `• Product: ${name}\n`;
   msg += `• Product ID: ${id}\n`;
   msg += `• Quantity: ${quantity || 1}\n`;
   if (color) msg += `• Preferred Color: ${color}\n`;
+  if (personalization) {
+    msg += `• ✨ Custom Personalization: "${personalization}"\n`;
+  }
   if (price) msg += `• Price: ₹${price * (quantity || 1)} (₹${price} each)\n`;
   if (location) msg += `• Delivery Area / City: ${location}\n`;
   if (notes) msg += `• Special Notes: ${notes}\n`;
+  if (personalization) {
+    msg += `\n(Please share a digital 3D text render preview to verify before printing.)\n`;
+  }
   msg += `\nPlease let me know the estimated delivery timeframe and payment details. Thank you!`;
   return msg;
 }

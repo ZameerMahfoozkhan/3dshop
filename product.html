@@ -153,6 +153,54 @@
               </div>
             </div>
 
+            <!-- Personalization Section (Active for Gift & Custom Items) -->
+            <div class="personalization-box" id="personalization-group" style="display: none;">
+              <div class="personalization-header">
+                <div class="personalization-title-row">
+                  <span class="personalization-sparkle">✍️</span>
+                  <label class="option-label" id="personalization-main-title" style="margin-bottom: 0; font-weight: 700; color: var(--text-primary);">
+                    Personalize This Item
+                  </label>
+                </div>
+                <span class="personalization-badge">Free 3D Embossing</span>
+              </div>
+
+              <!-- Line 1 Field -->
+              <div class="personalization-field-wrap">
+                <div class="personalization-sublabel-row">
+                  <label for="personalization-input-1" class="personalization-sublabel" id="personalization-label-1">Custom Name / Main Text to Emboss</label>
+                  <span class="personalization-char-count"><span id="char-count-1">0</span>/<span id="char-max-1">24</span></span>
+                </div>
+                <input type="text" id="personalization-input-1" class="personalization-text-input" placeholder="e.g. Dr. Aryan Sharma" maxlength="24" autocomplete="off">
+              </div>
+
+              <!-- Line 2 Field (Optional / Two-line items) -->
+              <div class="personalization-field-wrap" id="personalization-field-2" style="display: none;">
+                <div class="personalization-sublabel-row">
+                  <label for="personalization-input-2" class="personalization-sublabel" id="personalization-label-2">Title / Designation (Optional Line 2)</label>
+                  <span class="personalization-char-count"><span id="char-count-2">0</span>/<span id="char-max-2">32</span></span>
+                </div>
+                <input type="text" id="personalization-input-2" class="personalization-text-input" placeholder="e.g. Head of Product" maxlength="32" autocomplete="off">
+              </div>
+
+              <!-- Live 3D Embossed Preview Plate -->
+              <div class="embossed-preview-panel">
+                <div class="embossed-preview-header">
+                  <span class="embossed-preview-tag">LIVE 3D EMBOSSED PREVIEW</span>
+                  <span id="preview-color-name" style="color: #FFFFFF;">Matte Charcoal</span>
+                </div>
+                <div class="embossed-plate" id="embossed-plate">
+                  <div class="embossed-text-line1" id="preview-text-line1">YOUR NAME HERE</div>
+                  <div class="embossed-text-line2" id="preview-text-line2" style="display: none;">DESIGNATION / SUBTEXT</div>
+                </div>
+              </div>
+
+              <p class="personalization-guarantee-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#128C7E" aria-hidden="true" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/></svg>
+                <span id="personalization-hint-text">We verify a 3D digital CAD render preview with you on WhatsApp prior to printing.</span>
+              </p>
+            </div>
+
             <!-- Quantity Counter -->
             <div class="option-selector-group">
               <label class="option-label">Quantity</label>
@@ -309,7 +357,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/>
               </svg>
-              <span>WhatsApp: +91 98712 34567</span>
+              <span>WhatsApp: +91 73072 56084</span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex-shrink: 0;">
@@ -457,8 +505,94 @@
             btn.classList.add("active");
             selectedColor = btn.getAttribute("data-color");
             if (colorLabelName) colorLabelName.textContent = selectedColor;
+            const previewColorEl = document.getElementById("preview-color-name");
+            if (previewColorEl) previewColorEl.textContent = selectedColor;
           });
         });
+      }
+
+      // Personalization Engine (For Gift & Custom Personalizable Items)
+      const isPersonalizable = product.isPersonalizable || product.category === "Gifts";
+      const pGroup = document.getElementById("personalization-group");
+      const pInput1 = document.getElementById("personalization-input-1");
+      const pInput2 = document.getElementById("personalization-input-2");
+      const pField2 = document.getElementById("personalization-field-2");
+      const previewLine1 = document.getElementById("preview-text-line1");
+      const previewLine2 = document.getElementById("preview-text-line2");
+      const pMainTitle = document.getElementById("personalization-main-title");
+      const pLabel1 = document.getElementById("personalization-label-1");
+      const pLabel2 = document.getElementById("personalization-label-2");
+      const charCount1 = document.getElementById("char-count-1");
+      const charMax1 = document.getElementById("char-max-1");
+      const charCount2 = document.getElementById("char-count-2");
+      const charMax2 = document.getElementById("char-max-2");
+      const pHint = document.getElementById("personalization-hint-text");
+      const previewColorName = document.getElementById("preview-color-name");
+
+      if (previewColorName) previewColorName.textContent = selectedColor;
+
+      if (isPersonalizable && pGroup) {
+        pGroup.style.display = "flex";
+        const cfg = product.personalizationConfig || {
+          type: "single-line",
+          title: "Personalize This Gift",
+          line1Label: "Custom Name / Text to Emboss",
+          line1Placeholder: "e.g. Aryan Sharma",
+          line1Max: 24,
+          defaultLine1: "YOUR NAME HERE",
+          hint: "We verify a digital 3D text render preview on WhatsApp before manufacturing."
+        };
+
+        if (pMainTitle && cfg.title) pMainTitle.textContent = cfg.title;
+        if (pLabel1 && cfg.line1Label) pLabel1.textContent = cfg.line1Label;
+        if (pInput1) {
+          pInput1.placeholder = cfg.line1Placeholder || "Enter custom text";
+          pInput1.maxLength = cfg.line1Max || 24;
+          if (charMax1) charMax1.textContent = cfg.line1Max || 24;
+        }
+
+        if (cfg.type === "two-line" && pField2) {
+          pField2.style.display = "flex";
+          if (previewLine2) previewLine2.style.display = "block";
+          if (pLabel2 && cfg.line2Label) pLabel2.textContent = cfg.line2Label;
+          if (pInput2) {
+            pInput2.placeholder = cfg.line2Placeholder || "e.g. Founder & CEO";
+            pInput2.maxLength = cfg.line2Max || 32;
+            if (charMax2) charMax2.textContent = cfg.line2Max || 32;
+          }
+        }
+
+        if (pHint && cfg.hint) pHint.textContent = cfg.hint;
+
+        const default1 = cfg.defaultLine1 || "YOUR NAME HERE";
+        const default2 = cfg.defaultLine2 || "DESIGNATION / SUBTEXT";
+        if (previewLine1) previewLine1.textContent = default1;
+        if (previewLine2) previewLine2.textContent = default2;
+
+        // Live typing preview
+        if (pInput1 && previewLine1) {
+          pInput1.addEventListener("input", () => {
+            const val = pInput1.value.trim();
+            previewLine1.textContent = val ? val.toUpperCase() : default1;
+            if (charCount1) charCount1.textContent = pInput1.value.length;
+          });
+        }
+
+        if (pInput2 && previewLine2) {
+          pInput2.addEventListener("input", () => {
+            const val = pInput2.value.trim();
+            previewLine2.textContent = val ? val.toUpperCase() : default2;
+            if (charCount2) charCount2.textContent = pInput2.value.length;
+          });
+        }
+
+        // Auto-focus if user clicked "Personalize" from another page
+        if (window.location.hash === "#personalize") {
+          setTimeout(() => {
+            pGroup.scrollIntoView({ behavior: "smooth", block: "center" });
+            if (pInput1) pInput1.focus();
+          }, 350);
+        }
       }
 
       // Quantity State
@@ -490,14 +624,24 @@
 
       // WhatsApp Order Trigger Handler
       const triggerOrder = () => {
+        let customPersonalization = "";
+        if (isPersonalizable && pInput1) {
+          const l1 = pInput1.value.trim();
+          const l2 = pInput2 ? pInput2.value.trim() : "";
+          if (l1) {
+            customPersonalization = l1 + (l2 ? ` (${l2})` : "");
+          }
+        }
+
         const message = window.formatProductOrderMessage({
           id: product.id,
           name: product.name,
           price: product.price,
           quantity: currentQty,
           color: selectedColor,
+          personalization: customPersonalization,
           location: "Greater Noida / Delhi NCR",
-          notes: "Placed via product page."
+          notes: customPersonalization ? `Custom 3D Embossing: "${customPersonalization}"` : "Placed via product page."
         });
         window.openWhatsApp(message);
       };
