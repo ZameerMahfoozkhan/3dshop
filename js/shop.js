@@ -11,15 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
     sort: "featured"
   };
 
-  // Check URL parameters for pre-selected category
+  // Check URL parameters for pre-selected category and search
   const urlParams = new URLSearchParams(window.location.search);
   const initialCategory = urlParams.get("category");
   if (initialCategory) {
     state.category = initialCategory;
   }
 
+  const initialSearch = urlParams.get("search") || urlParams.get("q");
+  if (initialSearch) {
+    state.search = initialSearch.trim().toLowerCase();
+  }
+
   const gridEl = document.getElementById("products-grid");
   const searchInput = document.getElementById("shop-search-input");
+  if (searchInput && state.search) {
+    searchInput.value = initialSearch.trim();
+  }
   const sortSelect = document.getElementById("shop-sort-select");
   const categoryTabsWrap = document.getElementById("category-tabs-wrap");
   const resultsCountEl = document.getElementById("results-count");
@@ -75,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <button type="button" class="category-tab-btn ${isActive ? "active" : ""}" data-category="${cat}">
           <span>${cat}</span>
-          <span class="badge-count">${cat === "All" ? (window.PRODUCTS ? window.PRODUCTS.length : 12) : count}</span>
+          <span class="badge-count">${cat === "All" ? (window.PRODUCTS ? window.PRODUCTS.length : 0) : count}</span>
         </button>
       `;
     }).join("");

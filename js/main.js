@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccordions();
   initGlobalWhatsAppTriggers();
   initCurrentYear();
+  initNavSearch();
 });
 
 /**
@@ -67,7 +68,8 @@ function initMobileDrawer() {
     }
   });
 
-  if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
+  const closeBtns = document.querySelectorAll(".mobile-drawer-close, [data-drawer-close]");
+  closeBtns.forEach(btn => btn.addEventListener("click", closeDrawer));
   overlay.addEventListener("click", closeDrawer);
 
   drawerLinks.forEach(link => {
@@ -181,6 +183,18 @@ function createProductCardHTML(p) {
     ? `<span class="product-badge-tag ${isGift ? "product-badge-personalize" : ""}">${isGift ? "✨ " + p.badge : p.badge}</span>` 
     : (isGift ? `<span class="product-badge-tag product-badge-personalize">✨ Personalizable</span>` : "");
 
+  const ratingVal = p.rating ? Number(p.rating).toFixed(1) : "4.8";
+  const ratingCount = typeof p.ratingCount !== "undefined" ? p.ratingCount : 12;
+  const ratingHTML = `
+    <div class="product-rating-badge" aria-label="Rating: ${ratingVal} out of 5 stars from ${ratingCount} reviews" title="${ratingVal} rating (${ratingCount} reviews)">
+      <svg class="rating-star-icon" width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+      <span class="rating-score">${ratingVal}</span>
+      <span class="rating-count">(${ratingCount})</span>
+    </div>
+  `;
+
   return `
     <article class="product-card reveal-on-scroll" data-category="${p.category}" data-id="${p.id}">
       <div class="product-card-image-wrap">
@@ -188,6 +202,7 @@ function createProductCardHTML(p) {
           <img src="${p.image}" alt="${p.name} - 3D Printed Product by 3D Shop" class="product-card-image" loading="lazy" width="400" height="400">
         </a>
         ${badgeHTML}
+        ${ratingHTML}
       </div>
       <div class="product-card-body">
         <div class="product-meta-row">
@@ -258,3 +273,125 @@ document.addEventListener("click", (e) => {
 });
 
 window.createProductCardHTML = createProductCardHTML;
+
+/**
+ * Global Navbar Search Bar Handler (Autocomplete + Navigation)
+ */
+function initNavSearch() {
+  const searchWraps = document.querySelectorAll(".nav-search-wrap");
+  if (!searchWraps.length) return;
+
+  searchWraps.forEach(wrap => {
+    const form = wrap.querySelector(".nav-search-form");
+    const input = wrap.querySelector(".nav-search-input");
+    const clearBtn = wrap.querySelector(".nav-search-clear");
+    const dropdown = wrap.querySelector(".nav-search-dropdown");
+
+    if (!input) return;
+
+    let debounceTimer;
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      if (clearBtn) {
+        clearBtn.style.display = query.length > 0 ? "block" : "none";
+      }
+
+      clearTimeout(debounceTimer);
+      if (!dropdown) return;
+
+      if (query.length < 2) {
+        dropdown.style.display = "none";
+        dropdown.innerHTML = "";
+        return;
+      }
+
+      debounceTimer = setTimeout(() => {
+        if (!window.PRODUCTS) return;
+        const matches = window.PRODUCTS.filter(p => 
+          p.name.toLowerCase().includes(query) ||
+          p.tagline.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query) ||
+          p.id.toLowerCase().includes(query)
+        ).slice(0, 5);
+
+        if (matches.length === 0) {
+          dropdown.innerHTML = `
+            <div class="nav-search-empty">
+              No prints found for "<strong>${escapeHTML(query)}</strong>"
+            </div>
+            <div class="nav-search-footer">
+              <a href="shop.html?search=${encodeURIComponent(query)}">Browse full catalog &rarr;</a>
+            </div>
+          `;
+        } else {
+          dropdown.innerHTML = `
+            <ul class="nav-search-results-list">
+              ${matches.map(p => `
+                <li>
+                  <a href="product.html?id=${p.id}" class="nav-search-result-item">
+                    <img src="${p.image}" alt="${p.name}" class="nav-search-thumb" loading="lazy">
+                    <div class="nav-search-info">
+                      <span class="nav-search-title">${p.name}</span>
+                      <div class="nav-search-meta">
+                        <span>${p.category}</span>
+                        <span>⭐ ${p.rating ? Number(p.rating).toFixed(1) : "4.8"}</span>
+                      </div>
+                    </div>
+                    <span class="nav-search-price">₹${p.price}</span>
+                  </a>
+                </li>
+              `).join("")}
+            </ul>
+            <div class="nav-search-footer">
+              <a href="shop.html?search=${encodeURIComponent(query)}">View all results for "${escapeHTML(query)}" &rarr;</a>
+            </div>
+          `;
+        }
+        dropdown.style.display = "block";
+      }, 120);
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        input.value = "";
+        clearBtn.style.display = "none";
+        if (dropdown) {
+          dropdown.style.display = "none";
+          dropdown.innerHTML = "";
+        }
+        input.focus();
+      });
+    }
+
+    // Close on Escape or click outside
+    document.addEventListener("click", (e) => {
+      if (!wrap.contains(e.target) && dropdown) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dropdown) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        const val = input.value.trim();
+        if (!val) {
+          e.preventDefault();
+        }
+      });
+    }
+  });
+}
+
+function escapeHTML(str) {
+  return str.replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+  );
+}
+
+window.initNavSearch = initNavSearch;

@@ -65,9 +65,9 @@
   <div class="mobile-drawer-overlay"></div>
   <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
-      <img src="assets/logo/logo.svg" alt="3D Shop Logo" height="32">
-      <button type="button" class="mobile-drawer-close" aria-label="Close navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <img src="assets/logo/logo.svg" alt="3D Shop Logo" class="mobile-drawer-logo" width="130" height="30">
+      <button type="button" class="mobile-drawer-close" aria-label="Close navigation menu" title="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
@@ -87,6 +87,13 @@
       <button type="button" class="btn btn-whatsapp" style="width: 100%;" data-whatsapp-action="general">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.408A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 13.924c-.228.644-1.127 1.23-1.603 1.306-.445.07-1.026.098-1.66-.107-.404-.13-1.002-.328-1.748-.65-3.08-1.332-5.09-4.444-5.244-4.65-.154-.205-1.25-1.663-1.25-3.172 0-1.51.785-2.253 1.066-2.56.281-.308.614-.385.82-.385.205 0 .41.002.589.011.189.01.44-.071.688.522.256.615.87 2.128.947 2.282.077.154.128.333.026.538-.103.205-.154.333-.308.513-.154.179-.323.4-.461.538-.154.154-.314.32-.135.628.179.308.796 1.311 1.706 2.121 1.171 1.042 2.16 1.365 2.468 1.519.308.154.487.128.667-.077.179-.205.769-.897.974-1.205.205-.308.41-.256.692-.154.282.103 1.794.846 2.102 1.001.308.154.513.23.589.36.077.127.077.742-.151 1.386z"/></svg>
         <span>Chat on WhatsApp</span>
+      </button>
+      <button type="button" class="btn btn-secondary mobile-drawer-close-btn" data-drawer-close aria-label="Close navigation menu" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span>Close Menu</span>
       </button>
     </div>
   </aside>
@@ -113,6 +120,13 @@
               <div class="product-main-image-box">
                 <img id="detail-image" src="assets/products/minimal-phone-stand.jpg" alt="3D Printed Product Image" width="600" height="600">
                 <span id="detail-badge" class="product-badge-tag">Bestseller</span>
+                <div id="detail-floating-rating" class="product-rating-badge">
+                  <svg class="rating-star-icon" width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  <span class="rating-score" id="detail-img-rating-val">4.9</span>
+                  <span class="rating-count" id="detail-img-rating-count">(38)</span>
+                </div>
               </div>
             </div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; font-size: 0.8125rem; color: var(--text-muted); font-family: var(--font-mono);">
@@ -124,7 +138,16 @@
           <!-- Right: Product Information & Ordering Panel -->
           <div class="product-detail-info">
             <div>
-              <div class="eyebrow" id="detail-category-eyebrow">Desk Accessory</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.25rem;">
+                <div class="eyebrow" id="detail-category-eyebrow" style="margin-bottom: 0;">Desk Accessory</div>
+                <div class="product-detail-rating-pill" id="detail-pill-rating">
+                  <svg class="rating-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  <span class="rating-score" id="detail-pill-score">4.9</span>
+                  <span class="rating-count" id="detail-pill-count">(38 reviews)</span>
+                </div>
+              </div>
               <h1 class="product-detail-title" id="detail-title">Minimal Geometric Phone Stand</h1>
               <p class="text-caption" id="detail-tagline" style="font-size: 1.0625rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
                 Solid angled dock for smartphone or tablet with cable pass-through.
@@ -441,6 +464,20 @@
           badgeEl.style.display = "none";
         }
       }
+
+      // Populate Rating
+      const ratingVal = product.rating ? Number(product.rating).toFixed(1) : "4.8";
+      const ratingCount = typeof product.ratingCount !== "undefined" ? product.ratingCount : 12;
+
+      const imgRatingVal = document.getElementById("detail-img-rating-val");
+      if (imgRatingVal) imgRatingVal.textContent = ratingVal;
+      const imgRatingCount = document.getElementById("detail-img-rating-count");
+      if (imgRatingCount) imgRatingCount.textContent = `(${ratingCount})`;
+
+      const pillScoreEl = document.getElementById("detail-pill-score");
+      if (pillScoreEl) pillScoreEl.textContent = ratingVal;
+      const pillCountEl = document.getElementById("detail-pill-count");
+      if (pillCountEl) pillCountEl.textContent = `(${ratingCount} reviews)`;
 
       document.getElementById("detail-id-tag").textContent = `ID: ${product.id}`;
       document.getElementById("detail-category-eyebrow").textContent = `${product.category} Collection`;

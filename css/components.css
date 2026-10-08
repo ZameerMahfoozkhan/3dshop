@@ -606,6 +606,82 @@
   color: #FFFFFF;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Rating Badge on Card (Dark Pill with Star & Count) */
+.product-rating-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(24, 24, 27, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  user-select: none;
+}
+
+.product-card:hover .product-rating-badge {
+  transform: scale(1.05);
+  background: rgba(18, 19, 22, 0.96);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.rating-star-icon {
+  width: 12px;
+  height: 12px;
+  color: #F59E0B;
+  fill: #F59E0B;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(245, 158, 11, 0.35));
+}
+
+.rating-score {
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.rating-count {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.6875rem;
+}
+
+/* Rating Pill on Detail Page */
+.product-detail-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.product-detail-rating-pill .rating-score {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.product-detail-rating-pill .rating-count {
+  color: var(--text-muted);
 }
 
 .product-card-body {
@@ -1616,4 +1692,203 @@
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   NAVBAR SEARCH BAR & DROPDOWN AUTOCOMPLETE
+   ========================================================================== */
+.nav-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: 0 0.5rem 0 0.75rem;
+  height: 38px;
+  width: 190px;
+  transition: width 240ms var(--ease-snappy), border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.nav-search-form:hover {
+  border-color: var(--border-strong);
+}
+
+.nav-search-form:focus-within {
+  width: 270px;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light), var(--shadow-sm);
+  background: var(--bg-surface);
+}
+
+.nav-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-right: 0.375rem;
+  pointer-events: none;
+}
+
+.nav-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  width: 100%;
+  padding: 0;
+}
+
+.nav-search-input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.nav-search-clear {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  border-radius: var(--radius-full);
+}
+
+.nav-search-clear:hover {
+  color: var(--text-primary);
+}
+
+/* Floating Search Autocomplete Dropdown */
+.nav-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  max-width: 90vw;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 36px -4px rgba(24, 24, 27, 0.16), 0 4px 12px rgba(24, 24, 27, 0.08);
+  overflow: hidden;
+  z-index: 1000;
+  display: none;
+  animation: dropdownFadeIn 180ms ease forwards;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-search-results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.375rem;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.nav-search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: background 120ms ease;
+}
+
+.nav-search-result-item:hover,
+.nav-search-result-item.selected {
+  background: var(--bg-subtle);
+}
+
+.nav-search-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-subtle);
+  flex-shrink: 0;
+}
+
+.nav-search-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.nav-search-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-search-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.nav-search-price {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.nav-search-footer {
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.nav-search-footer a {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: block;
+}
+
+.nav-search-footer a:hover {
+  text-decoration: underline;
+}
+
+.nav-search-empty {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+/* Mobile Drawer Search Bar */
+.mobile-drawer-search {
+  padding: 0.75rem 1.25rem 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-drawer-search .nav-search-form {
+  width: 100% !important;
 }
