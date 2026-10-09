@@ -1,5 +1,5 @@
 /**
- * 3D Shop - Main Site Interactivity & Shared Components
+ * StuffForge - Main Site Interactivity & Shared Components
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -146,11 +146,11 @@ function initGlobalWhatsAppTriggers() {
     const action = target.getAttribute("data-whatsapp-action");
     if (action === "general") {
       e.preventDefault();
-      const message = "Hi 3D Shop, I am interested in your 3D printing services and would like to ask a few questions.";
+      const message = "Hi StuffForge, I am interested in your 3D printing services and would like to ask a few questions.";
       openWhatsApp(message);
     } else if (action === "greater-noida") {
       e.preventDefault();
-      const message = "Hi 3D Shop, I am located in Greater Noida / NCR and need fast 3D printing service.";
+      const message = "Hi StuffForge, I am located in Greater Noida / NCR and need fast 3D printing service.";
       openWhatsApp(message);
     } else if (action === "custom-order") {
       e.preventDefault();
@@ -199,7 +199,7 @@ function createProductCardHTML(p) {
     <article class="product-card reveal-on-scroll" data-category="${p.category}" data-id="${p.id}">
       <div class="product-card-image-wrap">
         <a href="product.html?id=${p.id}" aria-label="View ${p.name}">
-          <img src="${p.image}" alt="${p.name} - 3D Printed Product by 3D Shop" class="product-card-image" loading="lazy" width="400" height="400">
+          <img src="${p.image}" alt="${p.name} - 3D Printed Product by StuffForge" class="product-card-image" loading="lazy" width="400" height="400">
         </a>
         ${badgeHTML}
         ${ratingHTML}

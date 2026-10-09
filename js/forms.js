@@ -1,5 +1,5 @@
 /**
- * 3D Shop - Conversational Forms & WhatsApp Dispatcher
+ * StuffForge - Conversational Forms & WhatsApp Dispatcher
  * Validates user inputs client-side and opens pre-filled WhatsApp conversations.
  * Zero fake backend claims: clearly informs users about attaching files inside WhatsApp.
  */
@@ -141,7 +141,7 @@ function initContactForm() {
     const location = form.querySelector('[name="location"]').value.trim();
     const messageText = form.querySelector('[name="message"]').value.trim();
 
-    let msg = `Hi 3D Shop, my name is ${name || "a website visitor"}.\n\n`;
+    let msg = `Hi StuffForge, my name is ${name || "a website visitor"}.\n\n`;
     if (subject) msg += `• Subject: ${subject}\n`;
     if (location) msg += `• Location: ${location}\n`;
     if (messageText) msg += `• Message: ${messageText}\n`;

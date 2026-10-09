@@ -1,5 +1,5 @@
 /**
- * 3D Shop - Centralized WhatsApp Integration
+ * StuffForge - Centralized WhatsApp Integration
  * Single source of truth for WhatsApp contact & pre-filled message generation.
  */
 
@@ -37,7 +37,7 @@ function openWhatsApp(text) {
  * @returns {string}
  */
 function formatProductOrderMessage({ id, name, price, quantity, color, location, notes, personalization }) {
-  let msg = `Hi 3D Shop team, I would like to order from your ready-made catalog:\n\n`;
+  let msg = `Hi StuffForge team, I would like to order from your ready-made catalog:\n\n`;
   msg += `• Product: ${name}\n`;
   msg += `• Product ID: ${id}\n`;
   msg += `• Quantity: ${quantity || 1}\n`;
@@ -61,7 +61,7 @@ function formatProductOrderMessage({ id, name, price, quantity, color, location,
  * @returns {string}
  */
 function formatCustomInquiryMessage({ name, idea, dimensions, quantity, color, material, location, notes }) {
-  let msg = `Hi 3D Shop, I would like to request a Custom 3D Design & Print project:\n\n`;
+  let msg = `Hi StuffForge, I would like to request a Custom 3D Design & Print project:\n\n`;
   if (name) msg += `• Name: ${name}\n`;
   msg += `• Project Idea: ${idea || "Custom model"}\n`;
   if (dimensions) msg += `• Approx Dimensions: ${dimensions}\n`;
@@ -81,7 +81,7 @@ function formatCustomInquiryMessage({ name, idea, dimensions, quantity, color, m
  * @returns {string}
  */
 function formatPrintFileMessage({ name, fileType, purpose, dimensions, quantity, color, material, location, notes }) {
-  let msg = `Hi 3D Shop, I already have a 3D file and would like a print quotation:\n\n`;
+  let msg = `Hi StuffForge, I already have a 3D file and would like a print quotation:\n\n`;
   if (name) msg += `• Name: ${name}\n`;
   msg += `• File Format: ${fileType || "STL / 3MF / OBJ"}\n`;
   if (purpose) msg += `• Intended Use: ${purpose}\n`;
@@ -102,7 +102,7 @@ function formatPrintFileMessage({ name, fileType, purpose, dimensions, quantity,
  * @returns {string}
  */
 function formatBusinessMessage({ company, contactPerson, projectType, batchSize, material, timeline, location, notes }) {
-  let msg = `Hi 3D Shop Team, I am reaching out regarding a Business / Prototyping project:\n\n`;
+  let msg = `Hi StuffForge Team, I am reaching out regarding a Business / Prototyping project:\n\n`;
   if (contactPerson) msg += `• Contact Person: ${contactPerson}\n`;
   if (company) msg += `• Organization / Startup: ${company}\n`;
   msg += `• Scope / Project: ${projectType || "Rapid Prototyping / Batch"}\n`;

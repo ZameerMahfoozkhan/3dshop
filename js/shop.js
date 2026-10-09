@@ -1,5 +1,5 @@
 /**
- * 3D Shop - Catalog Filtering, Search & Sorting Logic
+ * StuffForge - Catalog Filtering, Search & Sorting Logic
  */
 
 document.addEventListener("DOMContentLoaded", () => {

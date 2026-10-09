@@ -1,5 +1,5 @@
 /**
- * 3D Shop - Product Catalog Database
+ * StuffForge - Product Catalog Database
  * Structured product information for ready-made 3D printed goods.
  */
 
@@ -365,10 +365,10 @@ const PRODUCTS = [
       "Real working kinematic mechanism with zero binding",
       "Printed with strict 0.12mm tolerance calibration for smooth gear meshing",
       "Includes stainless steel bolts, nylon locknuts, and ball bearings",
-      "Great demonstration of 3D Shop's rapid mechanical prototyping capabilities"
+      "Great demonstration of StuffForge's rapid mechanical prototyping capabilities"
     ],
     faqs: [
-      { q: "Can 3D Shop manufacture custom gearboxes or replacement parts?", a: "Yes! If you have a broken gear or bespoke transmission design, contact us via the Business or Print My File page." }
+      { q: "Can StuffForge manufacture custom gearboxes or replacement parts?", a: "Yes! If you have a broken gear or bespoke transmission design, contact us via the Business or Print My File page." }
     ]
   },
   {

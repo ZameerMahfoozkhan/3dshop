@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" fill="none">
-  <!-- 3D Shop Precision Layered Cube Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" fill="none">
+  <!-- StuffForge Precision Layered Cube Icon -->
   <g transform="translate(4, 4)">
     <!-- Isometric Cube Layers -->
     <!-- Top Face -->
@@ -25,11 +25,11 @@
     <circle cx="24" cy="2" r="2.5" fill="#E8590C"/>
   </g>
 
-  <!-- Typography: 3D SHOP -->
-  <text x="64" y="32" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.03em" fill="#18181B">
-    3D<tspan fill="#E8590C">SHOP</tspan>
+  <!-- Typography: StuffForge -->
+  <text x="64" y="32" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em" fill="#18181B">
+    STUFF<tspan fill="#E8590C">FORGE</tspan>
   </text>
-  <text x="65" y="45" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.18em" fill="#71717A">
-    STUDIO · NOIDA &amp; NCR
+  <text x="65" y="46" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" letter-spacing="0.12em" fill="#71717A">
+    FUTURISTIC &amp; EMERGING
   </text>
 </svg>

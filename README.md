@@ -1,6 +1,6 @@
-# 3D Shop — Studio & Product Lab
+# StuffForge — Futuristic & Emerging 3D Printing Studio & Product Lab
 
-Precision 3D printing studio and product lab based in Greater Noida, UP, delivering ready-made functional essentials and custom CAD manufacturing across India.
+Futuristic & emerging 3D printing studio and product lab based in Greater Noida, UP, delivering ready-made functional essentials and custom CAD manufacturing across India.
 
 ## Features
 - **Ready-Made Products**: Curated catalog of desk accessories, organization tools, home decor, and personalized gifts.
